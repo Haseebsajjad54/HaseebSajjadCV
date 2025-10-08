@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haseeb Sajjad - Flutter Developer CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .cv-container {
+            width: 210mm;
+            height: 297mm; /* A4 height */
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3c72 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .header .title {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255,255,255,0.15);
+            padding: 5px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 0;
+            flex: 1;
+            min-height: 0;
+        }
+        
+        .sidebar {
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px 18px;
+            border-right: 2px solid #2c5aa0;
+            overflow: visible;
+        }
+        
+        .content {
+            padding: 20px;
+            overflow: visible;
+        }
+        
+        .section {
+            margin-bottom: 18px;
+        }
+        
+        .section h2 {
+            color: #2c5aa0;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #2c5aa0;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .sidebar .section h2 {
+            color: #1e3c72;
+            border-bottom-color: #1e3c72;
+            font-size: 1rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 10px;
+        }
+        
+        .skill-category strong {
+            color: #1e3c72;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .skill-category span {
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.3;
+        }
+        
+        .education-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 3px solid #667eea;
+        }
+        
+        .education-item h3 {
+            color: #1e3c72;
+            margin-bottom: 3px;
+            font-size: 0.9rem;
+        }
+        
+        .education-item .institution {
+            color: #2c5aa0;
+            font-weight: 600;
+            margin-bottom: 3px;
+            font-size: 0.85rem;
+        }
+        
+        .education-item .date {
+            color: #6c757d;
+            font-style: italic;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+        
+        .education-item ul {
+            font-size: 0.75rem;
+            padding-left: 15px;
+        }
+        
+        .education-item li {
+            margin-bottom: 2px;
+        }
+        
+        .summary {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        .flutter-progress {
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .flutter-progress h3 {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .flutter-progress ul {
+            list-style: none;
+            font-size: 0.8rem;
+        }
+        
+        .flutter-progress li {
+            padding: 3px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .flutter-progress li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .project {
+            background: linear-gradient(135deg, #f8f9fa 0%, white 100%);
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid #2c5aa0;
+        }
+        
+        .project h3 {
+            color: #1e3c72;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+        
+        .project .tech-stack {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        
+        .project p {
+            font-size: 0.8rem;
+            line-height: 1.3;
+        }
+        
+        .languages {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .language-item {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            flex: 1;
+            border-top: 2px solid #2c5aa0;
+        }
+        
+        .language-item h4 {
+            color: #1e3c72;
+            margin-bottom: 3px;
+            font-size: 0.85rem;
+        }
+        
+        .language-item p {
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        /* Ensure single page layout */
+        @media screen {
+            .cv-container {
+                transform: scale(0.9);
+                transform-origin: top;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cv-container {
+                width: 100%;
+                height: 100vh;
+                max-width: none;
+                box-shadow: none;
+                transform: none;
+            }
+            
+            .main-content {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Compact spacing for single page */
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .project:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header class="header">
+            <h1>Haseeb Sajjad</h1>
+            <p class="title">Flutter Developer (Internship Seeking)</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Rawalpindi, Punjab, Pakistan</span>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>haseebsajjad54@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>0333-5133451</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <span>GitHub / LinkedIn</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="section">
+                    <h2>🎓 Education</h2>
+                    <div class="education-item">
+                        <h3>BS Software Engineering</h3>
+                        <div class="institution">FAST NUCES, Islamabad</div>
+                        <div class="date">Expected: June 2027</div>
+                        <ul>
+                            <li>Strong foundation in OOP, SDLC</li>
+                            <li>Data Structures & Algorithms</li>
+                            <li>Software Design & Architecture</li>
+                            <li>Requirement Engineering</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>💻 Technical Skills</h2>
+                    <div class="skill-category">
+                        <strong>Languages:</strong>
+                        <span>Dart, C++, Python, C#, SQL</span>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Frameworks:</strong>
+                        <span>Flutter, .NET, Firebase, FastAPI</span>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Databases:</strong>
+                        <span>SQLite, Firebase, MySQL, Hive DB</span>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Concepts:</strong>
+                        <span>OOP, Multithreading, Clean Architecture, MVC, UI/UX, REST API, ML Integration, IoT</span>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>🌱 Flutter Experience</h2>
+                    <ul style="font-size: 0.8rem; padding-left: 15px;">
+                        <li>6 complete Flutter apps developed</li>
+                        <li>Provider state management</li>
+                        <li>Firebase integration & authentication</li>
+                        <li>Custom UI animations & widgets</li>
+                        <li>REST API integration</li>
+                        <li>Local storage (Hive, SQLite)</li>
+                        <li>FastAPI backend integration</li>
+                        <li>ESP32 hardware connectivity</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2>🌐 Languages</h2>
+                    <div class="languages">
+                        <div class="language-item">
+                            <h4>English</h4>
+                            <p>Professional</p>
+                        </div>
+                        <div class="language-item">
+                            <h4>Urdu</h4>
+                            <p>Native</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            
+            <main class="content">
+                <div class="section">
+                    <h2>🎯 Professional Summary</h2>
+                    <div class="summary">
+                        Highly motivated Software Engineering student with solid foundation in C++, UI programming, and application development. Passionate about mobile development using Flutter and backend development with FastAPI. Skilled in designing interactive UIs, implementing clean code architecture, machine learning integration, IoT hardware connectivity, and solving real-world problems through scalable software solutions.
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>💼 Projects</h2>
+                    
+                    <div class="project">
+                        <h3>🚨 Panic Alert Application</h3>
+                        <div class="tech-stack">Flutter, FastAPI, Firebase, Provider, Dart, Python</div>
+                        <p>Comprehensive emergency response system with dual applications (user and admin). User app features real-time location sharing, emergency contacts, and instant alert triggering. Admin app provides dashboard for monitoring alerts, managing responses, and tracking emergency situations. FastAPI backend ensures fast, reliable communication and data processing.</p>
+                    </div>
+                    
+                    <div class="project">
+                        <h3>🤟 Gesture to Speech App</h3>
+                        <div class="tech-stack">Flutter, FastAPI, Python, Machine Learning, ESP32, Dart</div>
+                        <p>Assistive technology application that converts hand gestures into speech using machine learning model. Integrated with ESP32 hardware for real-time gesture recognition via sensors. FastAPI backend processes gesture data through ML model and returns speech output. Helps individuals with speech impairments communicate effectively.</p>
+                    </div>
+                    
+                    <div class="project">
+                        <h3>🍕 Food Delivery App</h3>
+                        <div class="tech-stack">Flutter, Provider, Firebase, Dart</div>
+                        <p>Full-featured food delivery app with restaurant listings, cart management, order tracking, and user authentication using Provider state management.</p>
+                    </div>
+                    
+                    <div class="project">
+                        <h3>💬 Chatting App</h3>
+                        <div class="tech-stack">Flutter, Firebase, Real-time Database</div>
+                        <p>Real-time messaging application with user profiles, chat rooms, message encryption, and push notifications using Firebase backend.</p>
+                    </div>
+                    
+                    
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
