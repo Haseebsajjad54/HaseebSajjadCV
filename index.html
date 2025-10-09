@@ -21,7 +21,7 @@
         
         .cv-container {
             width: 210mm;
-            height: 297mm; /* A4 height */
+            height: 297mm;
             max-width: 210mm;
             margin: 0 auto;
             background: white;
@@ -68,6 +68,15 @@
             padding: 5px 12px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
         }
         
         .main-content {
@@ -262,7 +271,6 @@
             color: #666;
         }
         
-        /* Ensure single page layout */
         @media screen {
             .cv-container {
                 transform: scale(0.9);
@@ -289,7 +297,6 @@
             }
         }
         
-        /* Compact spacing for single page */
         .section:last-child {
             margin-bottom: 0;
         }
@@ -311,7 +318,7 @@
                 </div>
                 <div class="contact-item">
                     <span>📧</span>
-                    <span>haseebsajjad54@gmail.com</span>
+                    <a href="mailto:haseebsajjad54@gmail.com">haseebsajjad54@gmail.com</a>
                 </div>
                 <div class="contact-item">
                     <span>📞</span>
@@ -319,8 +326,7 @@
                 </div>
                 <div class="contact-item">
                     <span>💼</span>
-                    <span>GitHub <a href="https://github.com/Haseebsajjad54"></a></span>
-                    
+                    <a href="https://github.com/Haseebsajjad54" target="_blank">GitHub</a>
                 </div>
             </div>
         </header>
@@ -425,8 +431,6 @@
                         <div class="tech-stack">Flutter, Firebase, Real-time Database</div>
                         <p>Real-time messaging application with user profiles, chat rooms, message encryption, and push notifications using Firebase backend.</p>
                     </div>
-                    
-                    
                 </div>
             </main>
         </div>
